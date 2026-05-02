@@ -1,17 +1,25 @@
 #include "SimpleSocket.hpp"
 
+
+
 mg::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port,
-                                u_long user_interface)
+                                u_long interface)
 {
 // Define address structure
     address.sin_family = domain;
     address.sin_port = htons(port);
-    address.sin_addr.s_addr = htonl(user_interface); 
-// Establish connection
-    int sock = socket(domain, service, protocol);
-    test_connection(sock);
+    address.sin_addr.s_addr = htonl(interface); 
 
-    connection = connect_to_network(sock, address);
+// Establish socket
+    int sock = socket(domain, service, protocol);
+
+    /**
+     * Originally we were creating the connection within here, however
+     * we were using the virtual function connect_to_network(), which is
+     * wrong, since we are supposed to be redefining it in the child classes
+     */
+    // test_connection(sock);
+    // connection = connect_to_network(sock, address);  
 
 }
 
@@ -31,4 +39,9 @@ int mg::SimpleSocket::get_connection(){
 }
 int mg::SimpleSocket::get_sock(){
     return sock;
+}
+
+
+void mg::SimpleSocket::set_connection(int conn){
+    connection = conn;
 }

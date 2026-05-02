@@ -7,6 +7,23 @@
 #include <netinet/in.h>
 #include <string.h>
 
+
+/** NOTES
+ * 
+ * The simple socket class should represent the most generalized form for all socket connections
+ *      Every network connection will need a...
+ *      - socket
+ *      - connection
+ *      - address information
+ * 
+ *      From there we can create children classes for each specific type of socket connection 
+ *      we will need. I.E. Client vs Server
+ * 
+ * 
+ * Sofar, since we are only binding a
+ * 
+ */
+
 namespace mg
 {
 
@@ -39,14 +56,23 @@ namespace mg
     public:
         SimpleSocket(int domain, int service, int protocol, int port,
         u_long user_interface);
-        virtual int connect_to_network(int sock, struct sockaddr_in addr ) = 0;
-        void test_connection(int test_sock);
-        struct sockaddr_in get_address();
-        int get_connection();
         
+        // Client and Servers use different methods/params to connect to networks
+        virtual int connect_to_network(int sock, struct sockaddr_in addr ) = 0;
+        //Tests socket and connection
+        void test_connection(int test_sock);
+        //Getter functions
+        struct sockaddr_in get_address();
+        int get_sock();
+        int get_connection();
+
+        //Setter Functions
+        void set_connection(int conn);
 
 
-        ~SimpleSocket(); 
+        // When a class has virtual functions, the destructor should also be virtual?
+        // 
+        // virtual ~SimpleSocket(); 
     };
     
 
