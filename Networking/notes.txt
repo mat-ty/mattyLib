@@ -16,3 +16,10 @@ Eric O Meehan
 
 
 
+Unfortunately this series ends early and eric ditched c++ for c and rewrote his entire networking lib lol
+
+Not giving in to the temptation. Going to follow this guide, https://16bpp.net/tutorials/csharp-networking/04c/
+but port it to c++. I assume the basic ideas are the same and the author mentions that ultimately tcp-client 
+(and the other network classes) are all sockets at the end of the day. After looking at the game server code they wrote
+I noticed that they are creating listeners,clients so I will try and just copy those classes and their functionality 
+next. Lets make 
