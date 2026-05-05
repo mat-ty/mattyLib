@@ -55,7 +55,7 @@ namespace mg
 
     public:
         SimpleSocket(int domain, int service, int protocol, int port,
-        u_long user_interface);
+        u_long interface);
         
         // Client and Servers use different methods/params to connect to networks
         virtual int connect_to_network(int sock, struct sockaddr_in addr ) = 0;

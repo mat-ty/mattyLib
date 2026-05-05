@@ -1,0 +1,18 @@
+https://medium.com/from-the-scratch/http-server-what-do-you-need-to-know-to-build-a-simple-http-server-from-scratch-d1ef8945e4fa
+Create the socket
+    We did this already, via the constructor for SimpleSocket
+Identify the socket
+    This is the binding/connecting step
+        servers bind
+        clients connect
+On the server, wait for an incoming connection
+Send and receive messages
+Close the socket
+
+
+This whole project is following the guide...
+https://www.youtube.com/watch?v=pTIZ9YjE3Pw
+Eric O Meehan
+
+
+
