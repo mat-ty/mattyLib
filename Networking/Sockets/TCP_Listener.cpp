@@ -13,6 +13,8 @@ const int TCP_Listener::get_queue_size(){
     return this->queue_size;
 }
 
+
+// This may cause the server to stop if there is no client trying to connect
 int TCP_Listener::accept_connection()
 {
     struct sockaddr_in client_addr{};

@@ -58,7 +58,8 @@ const struct sockaddr_in TCP_Socket::get_addr()
     return addr;
 }
 
-void TCP_Socket::set_addr(struct sockaddr_in addr)
+void TCP_Socket::set_addr(uint16_t port, uint32_t saddr)
 {
-    this->addr = addr;
+    this->addr.sin_port = port;
+    this->addr.sin_addr.s_addr = saddr;
 }

@@ -27,7 +27,7 @@ class TCP_Socket{
 
         void set_fd(int fd);
         const int get_fd();
-        void set_addr(struct sockaddr_in addr);
+        void set_addr(uint16_t port, uint32_t saddr);
         const struct sockaddr_in get_addr();
 
 };
