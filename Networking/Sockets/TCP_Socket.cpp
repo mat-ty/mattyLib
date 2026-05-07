@@ -12,16 +12,17 @@ TCP_Socket::TCP_Socket() : fd(-1), addr{}
     addr.sin_family = AF_INET;
 }
 
-TCP_Socket::TCP_Socket(int port, int saddr)
+TCP_Socket::TCP_Socket(uint16_t port, uint32_t saddr)
  : fd(socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)), addr{}
 {
     if (fd < 0)
     {
         die("socket() failed");
     }
+    
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-    addr.sin_addr.s_addr = htonl(saddr);
+    addr.sin_port = port;
+    addr.sin_addr.s_addr = saddr;
 }
 
 TCP_Socket::~TCP_Socket()

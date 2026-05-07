@@ -22,7 +22,7 @@ class TCP_Socket{
 
     public:
         TCP_Socket();
-        TCP_Socket(int port, int saddr);
+        TCP_Socket(uint16_t port, uint32_t saddr);
         ~TCP_Socket();
 
         void set_fd(int fd);

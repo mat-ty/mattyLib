@@ -8,13 +8,12 @@ class TCP_Listener : public TCP_Socket {
         int queue_size;
     
     public:
-        TCP_Listener();
         TCP_Listener(int port, int saddr, int queue_size);
         ~TCP_Listener();
 
-        int get_queue_size();
-        void set_queue_size(int qsize); 
+        const int get_queue_size();
 
+        int accept_connection();
         int start();
         void close_listener();
 
