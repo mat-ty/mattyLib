@@ -7,11 +7,12 @@ class TCP_Connection : public TCP_Socket {
     private:
     
     public:
+        TCP_Connection();
         TCP_Connection(int port, int saddr);
         ~TCP_Connection();
         
 
-        int connect_to_server();
-        void close_client();
+        int connect_to_host();
+        void close_connection();
 
 };

@@ -8,6 +8,7 @@ class TCP_Listener : public TCP_Socket {
         int queue_size;
     
     public:
+        TCP_Listener();
         TCP_Listener(int port, int saddr, int queue_size);
         ~TCP_Listener();
 

@@ -1,5 +1,7 @@
 #include "TCP_Listener.hpp"
 
+TCP_Listener::TCP_Listener() : TCP_Socket(), queue_size(0) {}
+
 TCP_Listener::TCP_Listener(int port, int saddr, int qsize) 
 : TCP_Socket(htons(port), htonl(saddr)), queue_size(qsize) {}
 
