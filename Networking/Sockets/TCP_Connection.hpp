@@ -2,6 +2,8 @@
 
 #include "TCP_Socket.hpp"
 
+#include <iostream>
+
 class TCP_Connection : public TCP_Socket {
 
     private:

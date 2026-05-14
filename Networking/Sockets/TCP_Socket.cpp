@@ -53,7 +53,7 @@ void TCP_Socket::set_fd(int fd)
     this->fd = fd;
 }
 
-const struct sockaddr_in TCP_Socket::get_addr()
+struct sockaddr_in& TCP_Socket::get_addr()
 {
     return addr;
 }

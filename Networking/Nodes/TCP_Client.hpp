@@ -9,7 +9,7 @@ class TCP_Client{
         TCP_Connection connection;
 
     public:
-        TCP_Client();
+        // TCP_Client();
         TCP_Client(int port, int saddr);
         ~TCP_Client();
 

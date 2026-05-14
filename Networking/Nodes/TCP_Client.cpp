@@ -1,8 +1,20 @@
 #include "TCP_Client.hpp"
 
-TCP_Client::TCP_Client() : connection() {}
+// TCP_Client::TCP_Client() : connection() {}
+/**
+ * So, there was an issue with the default constructor of TCP_Client. 
+ * Initially in testing we would create a TCP_Client object without parameters,
+ * then construct it with parameters...
+ *          TCP_Client client;
+ *          client = TCP_Client(8080, INADDR_LOOPBACK);
+ * I am unsure why this caused an issue, I guess i assumed that the connection member would have
+ * been overwritten by the second constructor. I need to investigate this further, but for now I have 
+ * commented out the default constructor and will only allow construction with parameters.
+ */
 
-TCP_Client::TCP_Client(int port, int saddr) : connection(port, saddr) {}
+TCP_Client::TCP_Client(int port, int saddr) : connection(port, saddr) {
+    std::cout << "Client initialized with port: " << port << " and address: " << saddr << std::endl;
+}
 
 TCP_Client::~TCP_Client() {
     close_client();

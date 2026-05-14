@@ -16,6 +16,9 @@ TCP_Connection::~TCP_Connection()
 
 int TCP_Connection::connect_to_host()
 {
+    std::cout<< "fd: " << get_fd() << std::endl;
+    std::cout<< "addr: " << &get_addr() << std::endl;
+
     if (connect(get_fd(), (const struct sockaddr *)&this->get_addr(), sizeof(this->get_addr())) == -1)
     {
         die("Connection failed");

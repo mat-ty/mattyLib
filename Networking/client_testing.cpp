@@ -3,8 +3,8 @@
 #include <iostream>
 
 int main() {
-    TCP_Client client;
-    client = TCP_Client(8080, INADDR_ANY);
+    // TCP_Client client;
+    TCP_Client client(8080, INADDR_LOOPBACK); // Connect to localhost on port 8080
     std::cout << "Client initialized." << std::endl;
 
     std::cout << "Connecting to server..." << std::endl;
