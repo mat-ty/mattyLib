@@ -1,5 +1,0 @@
-/Users/mg/projects/mattylib/Networking/build/CMakeFiles/networking.dir
-/Users/mg/projects/mattylib/Networking/build/CMakeFiles/server_test.dir
-/Users/mg/projects/mattylib/Networking/build/CMakeFiles/client_test.dir
-/Users/mg/projects/mattylib/Networking/build/CMakeFiles/edit_cache.dir
-/Users/mg/projects/mattylib/Networking/build/CMakeFiles/rebuild_cache.dir
